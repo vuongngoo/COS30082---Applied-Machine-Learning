@@ -14,7 +14,7 @@
 > **Project:**
 > - Title: ***Facial Recognition with Emotion and Liveness***
 > - Group: ***HN_4***
-> - Member 1: ***Vuong [Group Leader]*** - ID: 105551480
+> - Member 1: ***Ngo Sy Vuong [Group Leader]*** - ID: 105551480
 > - Member 2: ***Pham Trung Nghia*** - ID: 105536296
 > - Member 3: ***Nguyen Duc Manh*** - ID: 105557242
 > - Member 4: ***Nguyen Tung Bach*** - ID: 105548767
