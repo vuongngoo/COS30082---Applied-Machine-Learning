@@ -1,0 +1,8 @@
+.venv/
+.ultralytics/
+__pycache__/
+*.pyc
+*.zip
+last.pt
+dataset_validation/
+runs/
