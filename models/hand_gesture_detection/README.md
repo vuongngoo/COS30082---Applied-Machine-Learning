@@ -2,6 +2,14 @@
 
 Standalone hand gesture detection for COS30082 Applied Machine Learning. A COCO-pretrained YOLO11n was fine-tuned on the compact HaGRID dataset to detect **18 gestures and `no_gesture`**. The model returns a label, bounding box, and confidence for each detected hand.
 
+## Architecture and workflow
+
+The diagram covers the YOLO11n architecture, training and evaluation workflow, and local webcam inference.
+
+[![YOLO11n hand gesture architecture, training, evaluation, and webcam workflow](assets/hand_gesture_architecture.png)](assets/hand_gesture_architecture.png)
+
+Click the image to view it at full resolution, or [open the editable FigJam board](https://www.figma.com/board/0fasbqiB98iZlZ4Xhvlc52).
+
 ## Files
 
 - `best.pt`: trained gesture checkpoint, ready for inference.
