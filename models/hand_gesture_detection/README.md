@@ -6,9 +6,9 @@ Standalone hand gesture detection for COS30082 Applied Machine Learning. A COCO-
 
 The diagram covers the YOLO11n architecture, training and evaluation workflow, and local webcam inference.
 
-[![YOLO11n hand gesture architecture, training, evaluation, and webcam workflow](assets/hand_gesture_architecture.svg)](assets/hand_gesture_architecture.svg)
+[![YOLO11n hand gesture architecture, training, evaluation, and webcam workflow](assets/hand_gesture_architecture.png)](assets/hand_gesture_architecture.png)
 
-Click the image to view it at full resolution, or [open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH).
+Click the image to view it at full resolution, or [open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH?node-id=3-123).
 
 ## Files
 

@@ -4,9 +4,9 @@ Six-class facial-expression recognition with a local Windows webcam demo. Labels
 
 ## Architecture and workflow
 
-[![Emotion training and installed webcam workflow](assets/emotion_architecture.svg)](assets/emotion_architecture.svg)
+[![Emotion training and installed webcam workflow](assets/emotion_architecture.png)](assets/emotion_architecture.png)
 
-[Open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH). The training lane shows the six-block E5 experiment; the webcam lane shows the installed three-block E3 checkpoint.
+[Open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH?node-id=3-352). Section B shows the six-block E5 experiment; section C shows the installed three-block E3 checkpoint.
 
 ## Run the webcam
 
