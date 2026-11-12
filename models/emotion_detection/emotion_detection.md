@@ -41,7 +41,7 @@ Labels, confidence scores, and probability bars update every **0.5 seconds** usi
 
 | File | Purpose |
 | --- | --- |
-| `emotion_mobilenetv3_colab.ipynb` | Latest Colab notebook: six-block E5 experiment with saved outputs. |
+| `emotion_mobilenetv3_colab.ipynb` | Six-block E5 training, validation selection, test evaluation, and export. |
 | `emotion_mobilenetv3_large_6class_partial_last3.pt` | Three-block E3 checkpoint used by the webcam by default. |
 | `webcam_emotion.py` | Face detection, emotion inference, and smoothed live display. |
 | `face_detection_yunet_2023mar.onnx` | OpenCV YuNet face detector. |
@@ -55,9 +55,9 @@ Labels, confidence scores, and probability bars update every **0.5 seconds** usi
 
 Use `RUN_MODE = 'smoke'` for a short pipeline check. For training, supply FER2013 through the acquisition options in section 3 and run through section 8 for validation selection. Run sections 9–11 for test evaluation and export. `RUN_MODE = 'evaluate'` reloads matching completed runs from Drive. The default run directory is `MyDrive/emotion_mobilenetv3_6class_partial_last6_ls005/`.
 
-Saved E5 notebook outputs report best epoch 12, test accuracy **64.28%**, macro-F1 **62.58%**, and display threshold **0.80**. The E5 six-block checkpoint is not included here. The webcam uses the separate E3 three-block checkpoint below. Changing notebook settings does not change an existing checkpoint.
+The E5 run reports best epoch 12, test accuracy **64.28%**, macro-F1 **62.58%**, and a validation-selected display threshold of **0.80**.
 
-To use a newly exported model, place it beside the script and pass its filename:
+To run the exported E5 model, place its checkpoint beside the script and pass its filename:
 
 ```powershell
 .\run_emotion_webcam.cmd --weights .\emotion_mobilenetv3_large_6class_partial_last6.pt

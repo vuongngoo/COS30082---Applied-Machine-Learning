@@ -16,7 +16,7 @@ Click the image to view it at full resolution, or [open the editable FigJam boar
 - `hand_gesture_yolo11n_partial_freeze10_last.pt`: final-epoch partial-training checkpoint.
 - `hand_gesture_partial_freeze10_results/`: original run configuration, training logs, validation curves, and sample images from the supplied ZIP.
 - `webcam_gesture.py`: local Windows webcam demo.
-- `hand_gesture_yolo11n_colab.ipynb`: self-contained partial fine-tuning Colab workflow with stale full-training outputs cleared.
+- `hand_gesture_yolo11n_colab.ipynb`: data preparation, partial fine-tuning, evaluation, inference, and export in Google Colab.
 
 ## Run the webcam demo
 
@@ -37,7 +37,7 @@ For a faster preview, use a smaller inference size:
 .\.venv\Scripts\python.exe webcam_gesture.py --imgsz 320
 ```
 
-Smaller hands may be harder to detect at 320. Default inference size is 640, confidence is 0.60, and NMS IoU is 0.70. Confidence 0.60 is inherited from the previous full-training demo and has not been reselected for this partial checkpoint. If the camera is unavailable, close other camera apps, check Windows camera permissions, or try `--camera 1`.
+Smaller hands may be harder to detect at 320. Default inference size is 640, confidence is 0.60, and NMS IoU is 0.70. Select a confidence threshold on validation using the notebook's operating-point evaluation. If the camera is unavailable, close other camera apps, check Windows camera permissions, or try `--camera 1`.
 
 Check model loading without opening the webcam:
 
@@ -55,7 +55,7 @@ Select a GPU runtime and run the cells in order. Google Drive stores training ch
 - `RUN_MODE = 'full'`: train on the whole training split for up to 20 epochs with `FREEZE = 10`, then evaluate and export. The run name is `partial_freeze10`.
 - `RUN_MODE = 'evaluate'`: load the checkpoint specified by `WEIGHTS` and evaluate without training.
 
-The notebook defaults to partial fine-tuning with a smoke run for a fresh runtime. Previous full-training notebook outputs have been cleared. Rerun with `RUN_MODE = 'evaluate'` and `WEIGHTS` pointing to the supplied partial best checkpoint to obtain its test metrics and select its confidence on validation.
+The notebook defaults to partial fine-tuning with a smoke run for a fresh runtime. Set `RUN_MODE = 'evaluate'` and point `WEIGHTS` to the supplied partial best checkpoint to obtain its test metrics and select its confidence on validation.
 
 Use `RESUME_FULL = True` only with a still-resumable checkpoint from an interrupted run. Both supplied partial checkpoints are stripped exports (no optimizer state, epoch -1), so they cannot exactly resume an interrupted run. They can be used for inference or as initial weights for a new fine-tuning run.
 
@@ -74,7 +74,7 @@ The selected checkpoint reports the following **validation** metrics:
 | mAP50 | 99.171% |
 | mAP50–95 | 85.013% |
 
-These values come from the supplied best checkpoint's `train_metrics` and agree with epoch 20 in `results.csv`. No independent test-set metrics or validation-selected confidence threshold were supplied for this partial checkpoint. Old full-training scores have been removed from the notebook. The updated diagram shows the partial-training configuration and installed webcam settings.
+These values come from the supplied best checkpoint's `train_metrics` and agree with epoch 20 in `results.csv`. Use the notebook's evaluation mode to measure held-out test performance and select the confidence threshold on validation.
 
 Supported labels:
 
