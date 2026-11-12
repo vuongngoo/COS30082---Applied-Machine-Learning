@@ -1,0 +1,7 @@
+# Python 3.13.16; CUDA 13.0; mode train
+torch==2.14.1+cu130
+torchvision==0.29.1+cu130
+numpy==2.4.6
+opencv-python==4.14.0
+matplotlib==3.10.0
+pillow==11.3.0

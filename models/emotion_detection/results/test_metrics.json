@@ -1,0 +1,220 @@
+{
+  "protocol": "folder-based FER2013 protocol (audited)",
+  "selected": "E3",
+  "checkpoint": "/content/drive/MyDrive/emotion_mobilenetv3_6class_partial_last3/runs/E3/best.pt",
+  "checkpoint_sha256": "20249de53f1db584a15030dc4eb37462a47fe33970295b642f3d1468ff6536a7",
+  "test_size": 6957,
+  "exclusions": {
+    "near_blank": 13,
+    "duplicate": 1668,
+    "conflicting_duplicate": 138,
+    "excluded_disgust": 547
+  },
+  "metrics": {
+    "accuracy": 0.6369124622682191,
+    "balanced_accuracy": 0.619516494079249,
+    "macro_precision": 0.6263156803073705,
+    "macro_recall": 0.619516494079249,
+    "macro_f1": 0.6222775567372937,
+    "weighted_f1": 0.637373429590586,
+    "per_class": {
+      "angry": {
+        "precision": 0.5942196531791908,
+        "recall": 0.5462274176408076,
+        "f1": 0.5692137320044297,
+        "support": 941
+      },
+      "fear": {
+        "precision": 0.5086580086580087,
+        "recall": 0.46766169154228854,
+        "f1": 0.4872991187143598,
+        "support": 1005
+      },
+      "happy": {
+        "precision": 0.8385446276293349,
+        "recall": 0.8361678004535147,
+        "f1": 0.8373545273914278,
+        "support": 1764
+      },
+      "sad": {
+        "precision": 0.4948529411764706,
+        "recall": 0.5449392712550607,
+        "f1": 0.5186897880539498,
+        "support": 1235
+      },
+      "surprise": {
+        "precision": 0.7632275132275133,
+        "recall": 0.7322335025380711,
+        "f1": 0.7474093264248706,
+        "support": 788
+      },
+      "neutral": {
+        "precision": 0.5583913379737045,
+        "recall": 0.5898692810457516,
+        "f1": 0.5736988478347239,
+        "support": 1224
+      }
+    },
+    "confusion_matrix": [
+      [
+        514,
+        102,
+        49,
+        152,
+        28,
+        96
+      ],
+      [
+        110,
+        470,
+        30,
+        203,
+        83,
+        109
+      ],
+      [
+        54,
+        31,
+        1475,
+        67,
+        33,
+        104
+      ],
+      [
+        110,
+        152,
+        57,
+        673,
+        20,
+        223
+      ],
+      [
+        17,
+        88,
+        39,
+        28,
+        577,
+        39
+      ],
+      [
+        60,
+        81,
+        109,
+        237,
+        15,
+        722
+      ]
+    ]
+  },
+  "validation_metrics": {
+    "accuracy": 0.64960058097313,
+    "balanced_accuracy": 0.6295100933203324,
+    "macro_precision": 0.6376446430689247,
+    "macro_recall": 0.6295100933203324,
+    "macro_f1": 0.6329960019648959,
+    "weighted_f1": 0.6495470974377721,
+    "per_class": {
+      "angry": {
+        "precision": 0.5654596100278552,
+        "recall": 0.5272727272727272,
+        "f1": 0.5456989247311829,
+        "support": 385
+      },
+      "fear": {
+        "precision": 0.5575916230366492,
+        "recall": 0.5325,
+        "f1": 0.5447570332480819,
+        "support": 400
+      },
+      "happy": {
+        "precision": 0.8244170096021948,
+        "recall": 0.8382147838214784,
+        "f1": 0.8312586445366529,
+        "support": 717
+      },
+      "sad": {
+        "precision": 0.5279383429672447,
+        "recall": 0.5744234800838575,
+        "f1": 0.5502008032128515,
+        "support": 477
+      },
+      "surprise": {
+        "precision": 0.752851711026616,
+        "recall": 0.6898954703832753,
+        "f1": 0.72,
+        "support": 287
+      },
+      "neutral": {
+        "precision": 0.5976095617529881,
+        "recall": 0.6147540983606558,
+        "f1": 0.6060606060606061,
+        "support": 488
+      }
+    },
+    "confusion_matrix": [
+      [
+        203,
+        40,
+        21,
+        63,
+        12,
+        46
+      ],
+      [
+        40,
+        213,
+        17,
+        65,
+        30,
+        35
+      ],
+      [
+        17,
+        18,
+        601,
+        35,
+        13,
+        33
+      ],
+      [
+        50,
+        47,
+        25,
+        274,
+        6,
+        75
+      ],
+      [
+        16,
+        39,
+        15,
+        6,
+        198,
+        13
+      ],
+      [
+        33,
+        25,
+        50,
+        76,
+        4,
+        300
+      ]
+    ]
+  },
+  "display_threshold": 0.95,
+  "test_at_display_threshold": {
+    "threshold": 0.95,
+    "coverage": 0.5266637918643093,
+    "accepted_accuracy": 0.80867903930131,
+    "class_coverage": {
+      "angry": 0.4452709883103082,
+      "fear": 0.39303482587064675,
+      "happy": 0.7726757369614512,
+      "sad": 0.3951417004048583,
+      "surprise": 0.6560913705583756,
+      "neutral": 0.3937908496732026
+    }
+  },
+  "note": "Single-seed result; confidence is a maximum softmax score, not a calibrated probability."
+}

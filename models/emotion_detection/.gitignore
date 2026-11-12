@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.download
+.ipynb_checkpoints/
+emotion_work/
+emotion_mobilenetv3_6class_partial_*/

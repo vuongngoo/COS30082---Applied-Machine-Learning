@@ -1,0 +1,48 @@
+{
+  "name": "E3",
+  "checkpoint": "/content/drive/MyDrive/emotion_mobilenetv3_6class_partial_last3/runs/E3/best.pt",
+  "small_winner": "E2",
+  "rule": "E3 if validation macro-F1 >= E2 + 0.01 and CPU p95 <= 50.0 ms; otherwise E2",
+  "comparison": [
+    {
+      "name": "E1",
+      "arch": "small",
+      "weighted_loss": false,
+      "best_epoch": 14,
+      "val_macro_f1": 0.609497888550861,
+      "val_accuracy": 0.6314451706608569,
+      "val_balanced_accuracy": 0.6124554158102917,
+      "val_loss": 1.057005524635315,
+      "parameters": 1524006,
+      "train_minutes": 2.8,
+      "cpu_p95_ms_one_face": 14.22
+    },
+    {
+      "name": "E2",
+      "arch": "small",
+      "weighted_loss": true,
+      "best_epoch": 19,
+      "val_macro_f1": 0.6109908164752899,
+      "val_accuracy": 0.6339869281045751,
+      "val_balanced_accuracy": 0.6161636820450019,
+      "val_loss": 1.1434481143951416,
+      "parameters": 1524006,
+      "train_minutes": 3.5,
+      "cpu_p95_ms_one_face": 10.02
+    },
+    {
+      "name": "E3",
+      "arch": "large",
+      "weighted_loss": true,
+      "best_epoch": 26,
+      "val_macro_f1": 0.6329960019648959,
+      "val_accuracy": 0.64960058097313,
+      "val_balanced_accuracy": 0.6295100933203324,
+      "val_loss": 1.7150136232376099,
+      "parameters": 4209718,
+      "train_minutes": 7.2,
+      "cpu_p95_ms_one_face": 24.91
+    }
+  ],
+  "latency_note": "Colab CPU latency is a proxy; re-measure on the demonstration laptop."
+}

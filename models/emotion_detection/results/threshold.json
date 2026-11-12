@@ -1,0 +1,279 @@
+{
+  "target_accepted_accuracy": 0.8,
+  "display_threshold": 0.95,
+  "validation": {
+    "threshold": 0.95,
+    "coverage": 0.5232389251997095,
+    "accepted_accuracy": 0.8084663428174879,
+    "class_coverage": {
+      "angry": 0.45454545454545453,
+      "fear": 0.3825,
+      "happy": 0.7461645746164575,
+      "sad": 0.4129979035639413,
+      "surprise": 0.6062717770034843,
+      "neutral": 0.42418032786885246
+    }
+  },
+  "validation_table": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.05,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.1,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.15,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.2,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.25,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.64960058097313,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.3,
+      "coverage": 0.9996368917937546,
+      "accepted_accuracy": 0.6494733018525245,
+      "class_coverage": {
+        "angry": 1.0,
+        "fear": 1.0,
+        "happy": 0.99860529986053,
+        "sad": 1.0,
+        "surprise": 1.0,
+        "neutral": 1.0
+      }
+    },
+    {
+      "threshold": 0.35,
+      "coverage": 0.995279593318809,
+      "accepted_accuracy": 0.6508573513316308,
+      "class_coverage": {
+        "angry": 0.9922077922077922,
+        "fear": 0.995,
+        "happy": 0.99581589958159,
+        "sad": 0.9958071278825996,
+        "surprise": 1.0,
+        "neutral": 0.9938524590163934
+      }
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.990559186637618,
+      "accepted_accuracy": 0.6532258064516129,
+      "class_coverage": {
+        "angry": 0.987012987012987,
+        "fear": 0.99,
+        "happy": 0.9944211994421199,
+        "sad": 0.9874213836477987,
+        "surprise": 0.9965156794425087,
+        "neutral": 0.9877049180327869
+      }
+    },
+    {
+      "threshold": 0.45,
+      "coverage": 0.9753086419753086,
+      "accepted_accuracy": 0.6567386448250186,
+      "class_coverage": {
+        "angry": 0.961038961038961,
+        "fear": 0.9725,
+        "happy": 0.9874476987447699,
+        "sad": 0.9685534591194969,
+        "surprise": 0.9860627177700348,
+        "neutral": 0.9713114754098361
+      }
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.9513435003631082,
+      "accepted_accuracy": 0.6618320610687023,
+      "class_coverage": {
+        "angry": 0.9454545454545454,
+        "fear": 0.94,
+        "happy": 0.9679218967921897,
+        "sad": 0.9371069182389937,
+        "surprise": 0.975609756097561,
+        "neutral": 0.9405737704918032
+      }
+    },
+    {
+      "threshold": 0.55,
+      "coverage": 0.9219317356572259,
+      "accepted_accuracy": 0.6683733753446238,
+      "class_coverage": {
+        "angry": 0.922077922077922,
+        "fear": 0.9025,
+        "happy": 0.9539748953974896,
+        "sad": 0.8888888888888888,
+        "surprise": 0.9512195121951219,
+        "neutral": 0.9057377049180327
+      }
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.8859840232389252,
+      "accepted_accuracy": 0.6799180327868852,
+      "class_coverage": {
+        "angry": 0.8805194805194805,
+        "fear": 0.87,
+        "happy": 0.9344490934449093,
+        "sad": 0.8532494758909853,
+        "surprise": 0.9198606271777003,
+        "neutral": 0.8442622950819673
+      }
+    },
+    {
+      "threshold": 0.65,
+      "coverage": 0.8485838779956427,
+      "accepted_accuracy": 0.6872058194266153,
+      "class_coverage": {
+        "angry": 0.8363636363636363,
+        "fear": 0.8275,
+        "happy": 0.9121338912133892,
+        "sad": 0.8050314465408805,
+        "surprise": 0.8815331010452961,
+        "neutral": 0.805327868852459
+      }
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.8140885984023238,
+      "accepted_accuracy": 0.699821587867975,
+      "class_coverage": {
+        "angry": 0.7792207792207793,
+        "fear": 0.78,
+        "happy": 0.898186889818689,
+        "sad": 0.7735849056603774,
+        "surprise": 0.8536585365853658,
+        "neutral": 0.7622950819672131
+      }
+    },
+    {
+      "threshold": 0.75,
+      "coverage": 0.7730573710965868,
+      "accepted_accuracy": 0.709722874589009,
+      "class_coverage": {
+        "angry": 0.7116883116883117,
+        "fear": 0.7175,
+        "happy": 0.8870292887029289,
+        "sad": 0.710691823899371,
+        "surprise": 0.8257839721254355,
+        "neutral": 0.7295081967213115
+      }
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.7320261437908496,
+      "accepted_accuracy": 0.7266865079365079,
+      "class_coverage": {
+        "angry": 0.6649350649350649,
+        "fear": 0.6625,
+        "happy": 0.8702928870292888,
+        "sad": 0.660377358490566,
+        "surprise": 0.7909407665505227,
+        "neutral": 0.6741803278688525
+      }
+    },
+    {
+      "threshold": 0.85,
+      "coverage": 0.6779230210602759,
+      "accepted_accuracy": 0.7487948580610605,
+      "class_coverage": {
+        "angry": 0.612987012987013,
+        "fear": 0.5925,
+        "happy": 0.8382147838214784,
+        "sad": 0.6016771488469602,
+        "surprise": 0.7386759581881533,
+        "neutral": 0.6024590163934426
+      }
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.6190994916485113,
+      "accepted_accuracy": 0.770674486803519,
+      "class_coverage": {
+        "angry": 0.5506493506493506,
+        "fear": 0.515,
+        "happy": 0.803347280334728,
+        "sad": 0.5429769392033543,
+        "surprise": 0.686411149825784,
+        "neutral": 0.5225409836065574
+      }
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.5232389251997095,
+      "accepted_accuracy": 0.8084663428174879,
+      "class_coverage": {
+        "angry": 0.45454545454545453,
+        "fear": 0.3825,
+        "happy": 0.7461645746164575,
+        "sad": 0.4129979035639413,
+        "surprise": 0.6062717770034843,
+        "neutral": 0.42418032786885246
+      }
+    }
+  ]
+}

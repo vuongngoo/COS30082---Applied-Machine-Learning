@@ -1,0 +1,42 @@
+{
+  "classifier_only": [
+    {
+      "device": "cpu",
+      "faces": 1,
+      "p50_ms": 20.2,
+      "p95_ms": 22.95
+    },
+    {
+      "device": "cpu",
+      "faces": 3,
+      "p50_ms": 49.06,
+      "p95_ms": 58.08
+    },
+    {
+      "device": "cpu",
+      "faces": 5,
+      "p50_ms": 77.67,
+      "p95_ms": 91.02
+    },
+    {
+      "device": "cuda",
+      "faces": 1,
+      "p50_ms": 6.69,
+      "p95_ms": 9.21
+    },
+    {
+      "device": "cuda",
+      "faces": 3,
+      "p50_ms": 6.94,
+      "p95_ms": 8.23
+    },
+    {
+      "device": "cuda",
+      "faces": 5,
+      "p50_ms": 7.37,
+      "p95_ms": 8.11
+    }
+  ],
+  "torch_threads": 1,
+  "cpu": "x86_64"
+}

@@ -1,0 +1,21 @@
+{
+  "input": "one RGB uint8 face crop, shape (H, W, 3); convert OpenCV BGR to RGB once in the camera adapter",
+  "grayscale": "cv2.COLOR_RGB2GRAY, replicated to three channels",
+  "square": "symmetric edge-replicated padding (cv2.BORDER_REPLICATE)",
+  "source_size": 48,
+  "downscale": "cv2.INTER_AREA (cv2.INTER_LINEAR when enlarging)",
+  "input_size": 224,
+  "upscale": "bilinear, align_corners=False",
+  "center_crop": false,
+  "scale": "[0, 1]",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ]
+}

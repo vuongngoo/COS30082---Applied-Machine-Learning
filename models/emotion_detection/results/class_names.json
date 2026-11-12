@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "model_label": "angry",
+    "ui_label": "Angry"
+  },
+  {
+    "id": 1,
+    "model_label": "fear",
+    "ui_label": "Fear"
+  },
+  {
+    "id": 2,
+    "model_label": "happy",
+    "ui_label": "Happy"
+  },
+  {
+    "id": 3,
+    "model_label": "sad",
+    "ui_label": "Sad"
+  },
+  {
+    "id": 4,
+    "model_label": "surprise",
+    "ui_label": "Surprise"
+  },
+  {
+    "id": 5,
+    "model_label": "neutral",
+    "ui_label": "Neutral"
+  }
+]
