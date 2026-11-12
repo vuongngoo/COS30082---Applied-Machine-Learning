@@ -25,3 +25,8 @@
 > Weekly Lectures (from 1 to 11) will be inside the Lectures folder
 > 
 > You can also see the Lectures in [Google Doc](https://docs.google.com/document/d/1hPZ2dPPz9s-lMtFQfM7UZ2u2WiEy4DTkiWurlfG95ZM/edit?usp=sharing)
+
+## Model documentation
+
+- [Emotion detection](models/emotion_detection/emotion_detection.md) — notebook training, webcam setup, model results, and architecture diagram.
+- [Hand gesture detection](models/hand_gesture_detection/hand_gesture_detection.md) — partial fine-tuning, webcam setup, validation results, and architecture diagram.
