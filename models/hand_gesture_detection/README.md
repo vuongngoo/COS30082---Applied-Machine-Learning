@@ -1,20 +1,22 @@
-# Hand Gesture Detection — YOLO11n
+# Hand Gesture Detection — YOLO11n Partial Fine-tuning
 
-Standalone hand gesture detection for COS30082 Applied Machine Learning. A COCO-pretrained YOLO11n was fine-tuned on the compact HaGRID dataset to detect **18 gestures and `no_gesture`**. The model returns a label, bounding box, and confidence for each detected hand.
+Standalone hand gesture detection for COS30082 Applied Machine Learning. A COCO-pretrained YOLO11n was partially fine-tuned (backbone layers 0–9 frozen) on the compact HaGRID dataset to detect **18 gestures and `no_gesture`**. The model returns a label, bounding box, and confidence for each detected hand.
 
 ## Architecture and workflow
 
 The diagram covers the YOLO11n architecture, training and evaluation workflow, and local webcam inference.
 
-[![YOLO11n hand gesture architecture, training, evaluation, and webcam workflow](assets/hand_gesture_architecture.png)](assets/hand_gesture_architecture.png)
+[![YOLO11n hand gesture architecture, training, evaluation, and webcam workflow](assets/hand_gesture_architecture.svg)](assets/hand_gesture_architecture.svg)
 
-Click the image to view it at full resolution, or [open the editable FigJam board](https://www.figma.com/board/0fasbqiB98iZlZ4Xhvlc52).
+Click the image to view it at full resolution, or [open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH).
 
 ## Files
 
-- `best.pt`: trained gesture checkpoint, ready for inference.
+- `hand_gesture_yolo11n_partial_freeze10_best.pt`: selected partial-training checkpoint, used by default for inference.
+- `hand_gesture_yolo11n_partial_freeze10_last.pt`: final-epoch partial-training checkpoint.
+- `hand_gesture_partial_freeze10_results/`: original run configuration, training logs, validation curves, and sample images from the supplied ZIP.
 - `webcam_gesture.py`: local Windows webcam demo.
-- `hand_gesture_yolo11n_colab.ipynb`: self-contained Colab workflow with retained training, evaluation, and example outputs.
+- `hand_gesture_yolo11n_colab.ipynb`: self-contained partial fine-tuning Colab workflow with stale full-training outputs cleared.
 
 ## Run the webcam demo
 
@@ -27,7 +29,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe webcam_gesture.py
 ```
 
-Keep `best.pt` beside the script. Press **Q** or **Escape**, or close the window, to stop. Frames are processed locally and are not recorded. No dataset download or training is needed for this demo.
+Keep `hand_gesture_yolo11n_partial_freeze10_best.pt` beside the script. Press **Q** or **Escape**, or close the window, to stop. Frames are processed locally and are not recorded. No dataset download or training is needed for this demo.
 
 For a faster preview, use a smaller inference size:
 
@@ -35,7 +37,7 @@ For a faster preview, use a smaller inference size:
 .\.venv\Scripts\python.exe webcam_gesture.py --imgsz 320
 ```
 
-Smaller hands may be harder to detect at 320. Default inference size is 640, confidence is 0.60, and NMS IoU is 0.70. If the camera is unavailable, close other camera apps, check Windows camera permissions, or try `--camera 1`.
+Smaller hands may be harder to detect at 320. Default inference size is 640, confidence is 0.60, and NMS IoU is 0.70. Confidence 0.60 is inherited from the previous full-training demo and has not been reselected for this partial checkpoint. If the camera is unavailable, close other camera apps, check Windows camera permissions, or try `--camera 1`.
 
 Check model loading without opening the webcam:
 
@@ -50,24 +52,29 @@ Check model loading without opening the webcam:
 Select a GPU runtime and run the cells in order. Google Drive stores training checkpoints and exported results.
 
 - `RUN_MODE = 'smoke'`: short pipeline check using a small subset and 2 epochs. This is the fresh-runtime default.
-- `RUN_MODE = 'full'`: train for up to 50 epochs, then evaluate and export.
+- `RUN_MODE = 'full'`: train on the whole training split for up to 20 epochs with `FREEZE = 10`, then evaluate and export. The run name is `partial_freeze10`.
 - `RUN_MODE = 'evaluate'`: load the checkpoint specified by `WEIGHTS` and evaluate without training.
 
-Use `RESUME_FULL = True` only with an interrupted full run's `last.pt`. The notebook retains outputs from the completed full run; its defaults were reset to smoke mode for new users. The retained training log shows epochs 42–50 after resuming, rather than all 50 epochs in one runtime.
+The notebook defaults to partial fine-tuning with a smoke run for a fresh runtime. Previous full-training notebook outputs have been cleared. Rerun with `RUN_MODE = 'evaluate'` and `WEIGHTS` pointing to the supplied partial best checkpoint to obtain its test metrics and select its confidence on validation.
+
+Use `RESUME_FULL = True` only with a still-resumable checkpoint from an interrupted run. Both supplied partial checkpoints are stripped exports (no optimizer state, epoch -1), so they cannot exactly resume an interrupted run. They can be used for inference or as initial weights for a new fine-tuning run.
 
 ## Dataset and results
 
 Dataset: [cj-mills/hagrid-sample-30k-384p](https://huggingface.co/datasets/cj-mills/hagrid-sample-30k-384p), derived from [HaGRID](https://github.com/hukenovs/hagrid). The compact dataset card lists **CC BY-SA 4.0**. Dataset images retained in notebook outputs are attributed to these sources. The dataset archive is downloaded by the notebook and is not stored in this folder.
 
-All **31,833 images** were used with subject-disjoint partitions: **24,997 train / 3,627 validation / 3,209 test**. The selected confidence of 0.60 was chosen on validation only. Test matching uses IoU 0.50 with one-to-one, class-agnostic matching; NMS IoU is separately fixed at 0.70.
+The notebook uses subject-disjoint partitions of the **31,833 images**: **24,997 train / 3,627 validation / 3,209 test**. The supplied `partial_freeze10` run completed 20 epochs with batch 8, image size 640, and `freeze=10`. Its run configuration and complete 20-epoch log are included in `hand_gesture_partial_freeze10_results/`.
 
-| Test metric | All 19 classes | 18 gestures, excluding `no_gesture` |
-| --- | ---: | ---: |
-| Macro Precision | 98.82% | 99.15% |
-| Macro Recall | 98.59% | 98.78% |
-| Macro F1 | 98.70% | 98.96% |
+The selected checkpoint reports the following **validation** metrics:
 
-Validation mAP50 was **99.4%** and mAP50–95 was **86.7%**. These mAP values are validation results, not test results. The confusion matrix adds a background/no-match category, giving 20 rows and columns; the model itself has 19 classes.
+| Validation metric | Partial fine-tuning |
+| --- | ---: |
+| Precision | 97.888% |
+| Recall | 97.930% |
+| mAP50 | 99.171% |
+| mAP50–95 | 85.013% |
+
+These values come from the supplied best checkpoint's `train_metrics` and agree with epoch 20 in `results.csv`. No independent test-set metrics or validation-selected confidence threshold were supplied for this partial checkpoint. Old full-training scores have been removed from the notebook. The updated diagram shows the partial-training configuration and installed webcam settings.
 
 Supported labels:
 
@@ -88,5 +95,5 @@ two_up, two_up_inverted
 Model SHA-256:
 
 ```text
-61577770b0ed2e5517912f447200a33d5f9c9527e626a7ffba02f19a78e258df
+a1d0eef782ef694435ff4207f5691ac5dd484ebb798ceb593094afc66f6b17a9
 ```

@@ -2,6 +2,12 @@
 
 Six-class facial-expression recognition with a local Windows webcam demo. Labels: **angry, fear, happy, sad, surprise, neutral**. FER2013's `disgust` class is excluded.
 
+## Architecture and workflow
+
+[![Emotion training and installed webcam workflow](assets/emotion_architecture.svg)](assets/emotion_architecture.svg)
+
+[Open the editable FigJam board](https://www.figma.com/board/OU8PwRD93dNFnG5lxBypHH). The training lane shows the six-block E5 experiment; the webcam lane shows the installed three-block E3 checkpoint.
+
 ## Run the webcam
 
 Install Python and open PowerShell in the repository root. Checked locally on Windows with Python 3.14, PyTorch 2.11.0 CPU, and torchvision 0.26.0.

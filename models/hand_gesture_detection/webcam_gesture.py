@@ -1,4 +1,4 @@
-"""Run the trained hand gesture detector on a local webcam."""
+"""Hand gesture webcam."""
 
 import argparse
 import json
@@ -22,7 +22,7 @@ CLASS_NAMES = [
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--weights', type=Path, default=Path(__file__).with_name('best.pt'))
+    parser.add_argument('--weights', type=Path, default=Path(__file__).with_name('hand_gesture_yolo11n_partial_freeze10_best.pt'))
     parser.add_argument('--camera', type=int, default=0)
     parser.add_argument('--imgsz', type=int, default=640)
     parser.add_argument('--conf', type=float, default=0.60)
@@ -39,11 +39,13 @@ def main():
     checkpoint = model.ckpt or {}
     print('Checkpoint:', args.weights.resolve())
     print('Saved date:', checkpoint.get('date', 'unknown'))
+    training_args = checkpoint.get('train_args') or {}
+    print('Training run:', training_args.get('name', 'unknown'), '| Frozen layers:', training_args.get('freeze', 'unknown'))
     epoch = checkpoint.get('epoch', -1)
     print('Completed epochs:', epoch + 1 if epoch >= 0 else 'not retained in the exported checkpoint')
     print('Confidence:', args.conf, '| Image size:', args.imgsz)
     options = dict(conf=args.conf, iou=0.70, imgsz=args.imgsz, verbose=False)
-    # Warm up inference before starting the camera or timing its frames.
+
     sample = np.zeros((480, 640, 3), dtype=np.uint8)
     result = model.predict(sample, **options)[0]
     if args.check:
@@ -72,7 +74,7 @@ def main():
             ok, frame = camera.read()
             if not ok:
                 raise RuntimeError('Camera stopped delivering frames.')
-            # OpenCV arrays are BGR; Ultralytics handles their conversion internally.
+
             result = model.predict(frame, **options)[0]
             annotated = result.plot()
             fps = 1 / max(time.perf_counter() - started, 1e-6)
