@@ -1,4 +1,5 @@
 ## COS30082 - Applied Machine Learning
+Project Download Link: https://drive.google.com/drive/folders/1l3KXXo9vXk9SwR1-7vl7LN--TZqNVk_h?usp=drive_link
 
 > **Information:**
 > - Student Name: ***Ngo Sy Vuong***
